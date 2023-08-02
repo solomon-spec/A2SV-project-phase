@@ -5,3 +5,5 @@
 3. Create index.js file `touch index.js`
 4. Add lodash in the index file ```js const lodash  = require ('lodash');```
 5. Write your code in the index file
+6. To update lodas use `npm update lodash`
+7. To remove lodash `npm remove lodash`
