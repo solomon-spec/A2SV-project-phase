@@ -1,11 +1,10 @@
-
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home"
+import PageNotFound from "./pages/PageNotFound"
 function App() {
   return (
-    <>
-      <h1 className="text-3xl">Hello world!</h1>
-    </>
-  )
+    <Home />
+  );
 }
 
-export default App
+export default App;
