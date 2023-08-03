@@ -4,11 +4,11 @@ interface Props {
     addTask: (task: string) => void;
 }
 const Form = ({ addTask }: Props): JSX.Element => {
-    const [task, setTask] = useState<string>("");
+    const [task, setTask] = useState("");
     return (
         <div>
             <form onSubmit={(e) => { e.preventDefault(); addTask(task) }}
-                className="bg-slate-50 flex flex-col max-w-md p-12 space-y-8 mx-auto rounded-md mt-12 shadow-xl" action="">
+                className="bg-slate-50 flex flex-col max-w-[70%] p-12 space-y-8 mx-auto rounded-md mt-12 shadow-xl" action="">
                 <label htmlFor="task" className="font-mono font-medium">Task</label>
                 <input id="task" onChange={(e) => setTask(e.target.value)}
                     className="border-gray-300 border-2 rounded-md p-2" type="text" placeholder="task" />
