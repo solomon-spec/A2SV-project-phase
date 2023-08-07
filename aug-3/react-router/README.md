@@ -78,7 +78,7 @@ The project's folder structure is organized as follows:
 - Delete a contact by clicking the "Delete" button on the contact's detail page.
 
 ## demo
-[https://a2-sv-project-phase-n9gchxzr8-solomon-spec.vercel.app/](Demo page)**
+[Demo page](https://a2-sv-project-phase-n9gchxzr8-solomon-spec.vercel.app/)
 
 ## License
 
