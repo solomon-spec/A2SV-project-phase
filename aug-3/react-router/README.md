@@ -61,9 +61,13 @@ The project's folder structure is organized as follows:
 - `src/`: Contains the main source code for the application.
   - `contact.js`: Provides functions for managing contact data and simulating network delay.
   - `index.js`: The entry point of the application. Defines the routing and layout of the application.
-  - `Root.js`: Renders the main layout of the application.
   - `error-page.js`: Displays an error page in case of routing errors.
-  - `routes/`: Contains components for different routes (e.g., Contact, EditContact).
+  - `routes/`: Contains components for different routes
+     - `Root.js`: Renders the main layout of the application.
+     - `contact.jsx`: Renders detail of a fingle contact
+     - `destroy.jsx`: Deletes a specific contact and redirects to root.
+     - `edit`: EDit a spacific contact.
+     - `home`: The index page for root
 - `index.html`: The main HTML template for the application.
 
 
