@@ -20,7 +20,7 @@ import { action as destroyAction } from "./routes/destroy";
 import Root, { loader as rootLoader, action as rootAction, } from "./routes/root";
 import Home from './routes/home'
 import "./index.css";
-
+document.title = "React Router Contacts";
 // Create a router instance using createBrowserRouter and define routes for the application.
 const router = createBrowserRouter([
   {
@@ -29,6 +29,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />, // Render the ErrorPage component on route errors
     loader: rootLoader, // Use the rootLoader function to load data for this route
     action: rootAction, // Perform an action when this route is activated
+
+
     children: [
       {
         index: true, // This route is active when the index route is active
@@ -51,7 +53,9 @@ const router = createBrowserRouter([
         action: destroyAction, // Perform the destroyAction when this route is activated
       }
     ]
+
   },
+
 ]);
 
 

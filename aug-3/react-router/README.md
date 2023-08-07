@@ -9,7 +9,6 @@ A simple Contacts application built using React and React Router with Vite.
 - Create new contacts.
 - Edit contact details.
 - Delete contacts.
-- Search for contacts.
 
 In this Contacts application built using React and React Router with Vite, the following technologies and libraries were used:
 
@@ -78,7 +77,8 @@ The project's folder structure is organized as follows:
 - Edit contact details by clicking on a contact and then clicking "Save" after making changes.
 - Delete a contact by clicking the "Delete" button on the contact's detail page.
 
-
+## demo
+[https://a2-sv-project-phase-n9gchxzr8-solomon-spec.vercel.app/](Demo page)**
 
 ## License
 
