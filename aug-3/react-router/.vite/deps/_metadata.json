@@ -1,0 +1,59 @@
+{
+  "hash": "f9fdf59e",
+  "browserHash": "2222233f",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "7209dd66",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "d0893f42",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "ce2ceef5",
+      "needsInterop": false
+    },
+    "react-router": {
+      "src": "../../node_modules/react-router/dist/index.js",
+      "file": "react-router.js",
+      "fileHash": "1a938019",
+      "needsInterop": false
+    },
+    "localforage": {
+      "src": "../../node_modules/localforage/dist/localforage.js",
+      "file": "localforage.js",
+      "fileHash": "abe5a1f6",
+      "needsInterop": true
+    },
+    "match-sorter": {
+      "src": "../../node_modules/match-sorter/dist/match-sorter.esm.js",
+      "file": "match-sorter.js",
+      "fileHash": "ef932013",
+      "needsInterop": false
+    },
+    "sort-by": {
+      "src": "../../node_modules/sort-by/index.js",
+      "file": "sort-by.js",
+      "fileHash": "348fe241",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-EFD4EDXS": {
+      "file": "chunk-EFD4EDXS.js"
+    },
+    "chunk-YDMPIDXF": {
+      "file": "chunk-YDMPIDXF.js"
+    },
+    "chunk-WNKWOKNR": {
+      "file": "chunk-WNKWOKNR.js"
+    }
+  }
+}
