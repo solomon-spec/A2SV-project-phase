@@ -8,13 +8,15 @@ export async function loader({ params }) {
     return { contact };
 }
 
-// Contact Component: Displays detailed information about a contact.
+// Displays detailed information about a contact.
 export function Contact() {
     // Load contact data from the loader using useLoaderData hook.
     const { contact } = useLoaderData();
 
     return (
+
         <div id="contact">
+
             <div>
                 {/* Display the contact's avatar image. */}
                 <img
@@ -80,7 +82,7 @@ export function Contact() {
     );
 }
 
-// Favorite subcomponent: Allows toggling the favorite status of a contact.
+// Allows toggling the favorite status of a contact.
 function Favorite({ contact }) {
     // Set initial favorite status based on contact data.
     let favorite = contact.favorite;

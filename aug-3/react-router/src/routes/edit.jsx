@@ -3,20 +3,26 @@ import { updateContact } from "../contact";
 
 // Action function for handling contact updates.
 export async function action({ request, params }) {
+
     // Parse form data from the request.
     const formData = await request.formData();
+
     // Convert form data to key-value pairs.
     const updates = Object.fromEntries(formData);
+
     // Update the contact using the "updateContact" function.
     await updateContact(params.contactId, updates);
+
     // Redirect to the contact's detail page after updating.
     return redirect(`/contacts/${params.contactId}`);
 }
 
 // EditContact Component: Allows editing contact details.
 export function EditContact() {
+
     // Load contact data from the loader using useLoaderData hook.
     const { contact } = useLoaderData();
+
     // Get the navigate function from the useNavigate hook.
     const navigate = useNavigate();
 
