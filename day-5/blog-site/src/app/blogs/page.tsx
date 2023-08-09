@@ -21,13 +21,19 @@ export default function About() {
     return (
         <>
             <div>
-                <h1 className="text-3xl font-bold text-center">this is the page where we see all the blogs</h1>
+                <h1 className="text-3xl font-bold text-center">Discover Inspiring Blogs</h1>
             </div>
-            <div className="p-8 px-20 flex space-x-8 flex-wrap justify-between">
-                <BlogCard {...data} />
+            <div className="p-8 px-20 flex flex-wrap justify-between">
                 {blogs.map((blog, i) => {
                     return (
-                        <BlogCard key={i} {...blog} />
+                        <>
+                            <BlogCard key={i} {...blog} />
+                            <BlogCard key={i + 1000} {...blog} />
+                            <BlogCard key={i + 10000} {...blog} />
+                            <BlogCard key={i + 2000} {...blog} />
+                            <BlogCard key={i + 20000} {...blog} />
+                            <BlogCard key={i + 3000} {...blog} />
+                        </>
                     )
                 })}
             </div>
