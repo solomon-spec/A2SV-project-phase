@@ -1,12 +1,14 @@
 "use client"; // Enable client-side rendering
-import { Blog, getBlog, deleteBlog } from '@/data/blog'; // Import necessary functions from the specified path
-import { redirect, useParams, useRouter } from 'next/navigation'; // Import the redirect, useParams, and useRouter functions
-import { use, useEffect, useState } from 'react'; // Import the use, useEffect, and useState hooks
+import { Blog, getBlog, deleteBlog } from '@/data/blog';
+import { redirect, useParams, useRouter } from 'next/navigation';
+import { use, useEffect, useState } from 'react';
 import { Router } from 'next/router';
 
 export default function BlogPage() {
+
     const [blog, setBlog] = useState<Blog | null>(null); // Define a state for the blog data
     const params = useParams(); // Get URL parameters
+
     const router = useRouter(); // Initialize the useRouter hook
     const id = params.id; // Extract the blog ID from the URL parameters
 
