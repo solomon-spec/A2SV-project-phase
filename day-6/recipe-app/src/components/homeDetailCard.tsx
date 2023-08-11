@@ -44,7 +44,7 @@ export default function HomeDetailCard({ title, description, author }: Props) {
 
             {/* "View All" link */}
             <div className='flex mt-auto justify-end'>
-                <Link href='/recipes' className='py-2 px-4 bg-slate-200 max-w-fit hover:scale-110 cursor-pointer'>
+                <Link href='/recipies' className='py-2 px-4 bg-slate-200 max-w-fit hover:scale-110 cursor-pointer'>
                     View All
                 </Link>
             </div>
