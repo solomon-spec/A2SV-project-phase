@@ -2,22 +2,20 @@
 import { Blog, updateBlog, getBlog } from '@/data/blog'; // Import necessary functions from the specified path
 import { redirect, useRouter, useParams } from 'next/navigation'; // Import the redirect, useRouter, and useParams functions
 import { useState, useEffect } from 'react'; // Import the useState and useEffect hooks
+import { useGetBlogQuery } from '@/store/api/blogApi'; // Import the useGetBlogQuery hook
 
 export default function newBlog() {
     const router = useRouter(); // Initialize the useRouter hook
     const [blog, setBlog] = useState<Blog | null>(null); // Define a state for the blog data
     const params = useParams(); // Get URL parameters
     const id = params.id; // Extract the blog ID from the URL parameters
-
+    const { data, error, isLoading } = useGetBlogQuery(id as string, {});
     useEffect(() => {
-        // Fetch the blog data based on the ID
-        const blogs = getBlog(id as string);
-        blogs.then((data) => {
-            if (data) {
-                setBlog(data); // Set the fetched blog data in the state
-            }
-        });
-    }, []); // Run this effect only once when the component mounts
+        if (data) {
+            setBlog(data); // Set the blog data to the state
+        }
+    }, [data, error, isLoading]); // Call the useEffect hook
+
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

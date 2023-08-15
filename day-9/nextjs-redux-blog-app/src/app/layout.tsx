@@ -5,7 +5,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/navbar'; // Import the Navbar component from the specified path
-
+import RTKprovider from './rtkProvider'; // Import the RTKprovider component from the specified path
 // Load the Inter font with the specified subsets
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,11 +18,15 @@ export const metadata: Metadata = {
 // Define the RootLayout component which acts as a base layout for the entire application
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+
     <html lang="en"> {/* Set the language attribute of the HTML */}
-      <body className={inter.className}> {/* Apply the Inter font to the body */}
-        <Navbar /> {/* Render the Navbar component */}
-        {children} {/* Render the content passed as children */}
-      </body>
+      <RTKprovider> {/* Wrap the entire application with the RTKprovider component */}
+        <body className={inter.className}> {/* Apply the Inter font to the body */}
+          <Navbar /> {/* Render the Navbar component */}
+          {children} {/* Render the content passed as children */}
+        </body>
+      </RTKprovider>
     </html>
+
   );
 }

@@ -3,6 +3,7 @@ import { Blog, getBlog, deleteBlog } from '@/data/blog';
 import { redirect, useParams, useRouter } from 'next/navigation';
 import { use, useEffect, useState } from 'react';
 import { Router } from 'next/router';
+import { useGetBlogQuery } from '@/store/api/blogApi';
 
 export default function BlogPage() {
 
@@ -11,16 +12,12 @@ export default function BlogPage() {
 
     const router = useRouter(); // Initialize the useRouter hook
     const id = params.id; // Extract the blog ID from the URL parameters
-
+    const { data, error, isLoading } = useGetBlogQuery(id as string, {}); // Call the useGetBlogQuery hook
     useEffect(() => {
-        // Fetch the blog data based on the ID
-        const blogs = getBlog(id as string);
-        blogs.then((data) => {
-            if (data) {
-                setBlog(data); // Set the fetched blog data in the state
-            }
-        });
-    }, []); // Run this effect only once when the component mounts
+        if (data) {
+            setBlog(data); // Set the blog data to the state
+        }
+    }, [data, error, isLoading]); // Call the useEffect hook
 
     // Function to delete the current blog
     const m_deleteBlog = async () => {

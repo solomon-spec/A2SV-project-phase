@@ -2,21 +2,17 @@
 import BlogCard from "@/components/blogCard";
 import { Blog, randomId, getBlogs } from "@/data/blog";
 import { useEffect, useState } from "react";
+import { useGetBlogsQuery } from "../api/blog";
 
-const data: Blog = {
-    id: randomId(),
-    title: "Web dev",
-    image: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=",
-    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, atque laudantium! Recusandae neque dolore repudiandae ducimus assumenda obcaecati quo! Maxime esse ipsam tenetur delectus dignissimos distinctio autem asperiores architecto ex?",
-    date: new Date(),
-    author: "Solomon Abate"
-}
+
 export default function About() {
-    const [blogs, setBlogs] = useState<Blog[]>([])
+    const { data, error, isLoading } = useGetBlogsQuery(undefined, {});
+    const [blogs, setBlogs] = useState<Blog[]>([]);
     useEffect(() => {
-        getBlogs().then(response => setBlogs(response))
-        console.log(blogs)
-    }, []);
+        if (data) {
+            setBlogs(data);
+        }
+    }, [data, error, isLoading]);
 
     return (
         <>
@@ -28,11 +24,6 @@ export default function About() {
                     return (
                         <>
                             <BlogCard key={i} {...blog} />
-                            <BlogCard key={i + 1000} {...blog} />
-                            <BlogCard key={i + 10000} {...blog} />
-                            <BlogCard key={i + 2000} {...blog} />
-                            <BlogCard key={i + 20000} {...blog} />
-                            <BlogCard key={i + 3000} {...blog} />
                         </>
                     )
                 })}

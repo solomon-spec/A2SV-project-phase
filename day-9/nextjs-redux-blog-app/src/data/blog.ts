@@ -1,5 +1,4 @@
-// Import necessary modules and functions
-import { UUID, randomUUID } from "crypto";
+
 
 // Define the Blog interface with its properties
 export interface Blog {
@@ -14,7 +13,6 @@ export interface Blog {
 // Retrieve blogs from local storage
 export async function getBlogs(): Promise<Blog[]> {
     const data = localStorage.getItem('blogs');
-    console.log(data);
     if (data) {
         return JSON.parse(data);
     }
