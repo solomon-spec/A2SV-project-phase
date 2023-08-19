@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function BlogCard({ title, image, content, date, author, id }: Blog) {
     return (
         // Outer container for the blog card, styling with CSS classes
-        <div className="bg-slate-100 max-w-[20rem] max-h-[30rem] rounded-md overflow-hidden m-4">
+        <div className="bg-slate-100 max-w-[20rem] rounded-md overflow-hidden m-4">
             {/* Display the blog image */}
             <img className="max-h-[50%] w-full object-cover" src={image} alt="blog image" />
 

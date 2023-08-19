@@ -7,7 +7,7 @@ export default function Navbar() {
         // Navigation bar container with flex layout and styling
         <nav className="p-4 mb-8 flex justify-between items-center bg-slate-50">
             {/* Logo */}
-            <div className="text-3xl font-bold">Logo</div>
+            <div className="text-3xl font-bold" id='data-logo'>Logo</div>
 
             {/* List of navigation links */}
             <ul className="flex justify-around space-x-12">

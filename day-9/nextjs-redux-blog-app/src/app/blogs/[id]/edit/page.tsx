@@ -1,8 +1,8 @@
 'use client'; // Enable client-side rendering
-import { Blog, updateBlog, getBlog } from '@/data/blog'; // Import necessary functions from the specified path
+import { Blog } from '@/data/blog'; // Import necessary functions from the specified path
 import { redirect, useRouter, useParams } from 'next/navigation'; // Import the redirect, useRouter, and useParams functions
 import { useState, useEffect } from 'react'; // Import the useState and useEffect hooks
-import { useGetBlogQuery } from '@/store/api/blogApi'; // Import the useGetBlogQuery hook
+import { useGetBlogQuery, useUpdateBlogMutation } from '@/store/api/blogApi'; // Import the useGetBlogQuery hook
 
 export default function newBlog() {
     const router = useRouter(); // Initialize the useRouter hook
@@ -10,6 +10,8 @@ export default function newBlog() {
     const params = useParams(); // Get URL parameters
     const id = params.id; // Extract the blog ID from the URL parameters
     const { data, error, isLoading } = useGetBlogQuery(id as string, {});
+    // usemutution 
+    const [editBlog, mutationObj] = useUpdateBlogMutation()
     useEffect(() => {
         if (data) {
             setBlog(data); // Set the blog data to the state
@@ -27,8 +29,8 @@ export default function newBlog() {
         newBlog.author = e.currentTarget.author.value; // Update the author
         newBlog.image = e.currentTarget.image.value; // Update the image
         newBlog.content = e.currentTarget.content.value; // Update the content
-        await updateBlog(newBlog); // Call the updateBlog function
-        router.push('/'); // Redirect to the home page
+        editBlog(newBlog);
+        router.push('/blogs'); // Redirect to the home page
     }
 
     return (
